@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5de4e9b796.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body class="fuente">
+
+   <nav>
+        <div class="h-[70px] w-full text-s flex flex-row bg-white justify-evenly items-center font-semibold md:justify-between md:h-[120px] md:w-full md:px-[140px]">
+            <img class="h-[40px] min-h-[15px] min-w-[60px] md:h-[50px] md:w-[300px]" src="./Materiales/logo.png" alt="">
+            <div class="md:flex md:flex-row md:justify-items-start md:pl-[80px] md:w-full">
+                <a href="#nosotros" class="hidden md:block text-2xl font-bold px-[50px]">Nosotros</h4>
+                <a href="#noticias" class="hidden md:block text-2xl font-bold px-[50px]">Noticias</h4>
+                <a href="#contacto" class="hidden md:block text-2xl font-bold px-[50px]">Ayuda</a>
+            </div>
+            <button id="open" class="hover:bg-[#7749F8] bg-[#5227CC] px-[20px] py-[5px] text-white font-semibold rounded-full md:text-[20px] md:w-[250px] md:h-[40px]">Ingresar</button>
+        
+        </div>
+    </nav>
+
+    <header>
+        <div  class= "w-full min-h-[774px] h-screen md:flex md:flex-col md:items-center bg-cover bg-center bg-[url('./Materiales/manos.jpg')]">
+            <!-- div ventana Modal Pop Up -->
+            <div id="ventanaModal" style="display: none" class="pt-[0px] md:pt-[50px]">
+                <div class="rounded-l-[10px] md:flex md:flex-row md:w-[1000px] md:h-[500px] md:bg-white rounded-[10px]">
+                    <div class="rounded-l-[10px] md:bg-[url('./Materiales/imagen-modal.jpg')] bg-cover bg-center md:w-[500px] md:h-full"></div>
+
+                    <div class="w-full bg-gray-100 rounded-r-[10px] md:w-[500px] md:h-full md:flex md:flex-col md:items-center">
+                        <div class="w-full flex flex-row justify-between  md:mx-[20px] md:pt-[20px]">
+                            <div class="flex flex-row pl-[10px] md:flex md:flex-row md:justify-start md:items-center md:pl-[20px]">
+                                <img src="./Materiales/icono-flecha-izquierda.png" alt="">
+                                <a href="" class="text-s pl-[10px]">volver atras</a>
+                            </div>    
+                            <div>
+                                <i id="close" class="fa-solid fa-xmark pr-[20px]"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl font-bold text-center md:pt-[20px]">REGISTRAR</h2>
+                        <!-- maletin -->
+                        <div class="flex items-center justify-center w-full pb-[20px]">
+                            <div class="w-[300px] h-[150px] mt-[10px] flex flex-row md:w-[450px] md:h-[150px] bg-white rounded-[10px] md:flex md:flex-row md:mt-[10px]">
+                                <div class="md:h-full w-[80px] bg-[#5298FF] rounded-l-[10px] flex items-center justify-center">
+                                    <img src="./Materiales/icono-maletin.png" alt="" class="w-[50px] h-[50px]">
+                                </div>
+                                <div class="md:w-full">
+                                    <h2 class="text-xl text-left font-bold pt-[20px] pl-[20px]">MI EMPRESA</h2>
+                                    <p class="text'gray text-sm pt-[10px] pl-[20px]">Breve explicación a lo que nos referimos.</p>
+                                    <div class="w-full flex justify-end mt-[20px] md:mt-[50px]">
+                                        <img src="./Materiales/icono-flecha.png" alt="" class="mr-[20px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- personita -->
+                        <div class="flex items-center justify-center w-full pb-[20px]">
+                            <div class="w-[300px] h-[150px] flex flex-row mt-[10px] md:w-[450px] md:h-[150px] bg-white rounded-[10px] md:flex md:flex-row md:mt-[20px]">
+                                <div class="md:h-full w-[80px] bg-[#7749F8] rounded-l-[10px] flex items-center justify-center">
+                                    <img src="./Materiales/icono-persona.png" alt="" class="w-[40px] h-[40px]">
+                                </div>
+                                <div class="md:w-full">
+                                    <h2 class="text-xl text-left font-bold pt-[20px] pl-[20px]">MI ORGANIZACIÓN</h2>
+                                    <p class="text'gray text-sm pt-[10px] pl-[20px]">Estamos para ayudarlos a tener éxito.</p>
+                                    <div class="w-full flex justify-end mt-[20px] md:mt-[50px]">
+                                        <img src="./Materiales/icono-flecha.png" alt="" class="mr-[20px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div> 
+            <!-- fin div ventana Modal-->
+            
+            <div id="divHeader" class="text-white text-center w-full h-full flex flex-col items-center justify-center font-semibold">
+              <h2 class="text-2xl font-semibold pb-[30px] md:text-[60px]">¡Actúa para cambiar el mundo!</h2> 
+              <p class="text-[17px] pb-[5px] md:text-[25px] md:w-[870px]">Fomentamos el vínculo entre empresas y organizaciones civiles para generar un impacto positivo en la sociedad.</p>
+              <p class="text-[17px] md:text-[25px] md:w-[850px]">Descubrí diferentes maneras de involucrar tu organización con la sociedad.</p>
+            </div>
+
+        </div>      
+   </header>
+   
+   <!--nosotros-->
+   <section id="nosotros">
+        
+        <div class="bg-[#5298FF] min-w-[390px] md:h-screen min-h-[844px] pt-[40px] flex flex-col">
+            <!--soluciones-->
+            <div class="flex flex-col text-white justify-center items-center py-[30px] pb-[40px] md:flex-row md:px-[20px]"id="empresas">
+                <img class="w-[350px] h-[175px] md:w-[600px] md:h-[300px] md:pr-[40px]" src="./Materiales/oficina.png" alt="">
+                <div class="flex-col text-center md:flex-row md:text-left md:px-[15px]"> 
+                     <h4 class="text-2xl py-[15px] w-[300px] font-semibold md:text-[30px] md:w-[450px] md:pl-[15px] pb-[40px]">Soluciones para empresas</h4>
+                     <p class="text-center text-sm w-[300px] px-[5px] md:text-left md:w-[500px] md:text-[20px] ">Generamos un medio para que las empresas se involucren en actividades de responsabilidad social.¡Crea un grupo de voluntarios en tu organizacion y se parte del cambio!</p> 
+                </div>
+            </div>
+            <div class="flex flex-col text-white justify-center items-center pt-[40px] pb-[40px] md:flex-row-reverse" id="organizaciones">
+ 
+                <img class="w-[300px] h-[150px] md:w-[600px] md:h-[300px] md:pl-[40px]"src="./Materiales/voluntariado.jpg" alt="">
+                <div class="flex-col text-center md:flex  md:text-right md:px-[15px]"> 
+                    <h4 class="text-2xl py-[15px] w-[300px] font-semibold md:text-[30px] md:w-[450px] md:pr-[15px] pb-[40px]">Soluciones para organizaciones</h4>
+                    <p class="text-center text-sm w-[300px]  px-[5px] md:text-left md:w-[500px] md:text-[20px]  ">Apoyamos a las organizaciones para que alcancen sus objetivos. Ponemos a su dispocision una comunidad de voluntarios dispuestos ayudarlos en sus necesidades. Equipos de voluntarios por empresas dispuestos a potenciar su impacto en la sociedad. </p> 
+                </div>
+            </div>
+        </div>
+        <!--oportunidades-->
+        <div class="w-full bg-white flex flex-col items-center">
+            <div class="bg-white flex flex-col justify-center items-center pt-[80px]">
+                <h2 class="text-2xl text-center text-gray-800 font-semibold md:text-3xl md:pt-[30px] md:pb-[10px]">Encuentra las mejores oportunidades</h2>
+                <p class="text-center pt-[20px] px-[15px] md:text-xl md:px-[200px] md:pb-[30px]">La plataforma cuenta con gran variedad de proyectos locales (sociales, educativos y medioambiente), donde encontraras el que mejor se adapte a la experiencia que estas buscando. Te ayudamos con la organizacion de forma simple y rapida.</p>
+            </div>
+        
+            <div class="flex flex-col items-center justify-around bg-white md:flex-row md:justify-center md:pb-[50px]">
+                <button class="flex flex-col bg-[#DC3545] w-[250px] h-[200px] my-[20px] rounded-[10px] md:mx-[30px]">
+                    <div class="flex flex-row justify-between w-full h-full pt-[15px] px-[20px]">
+                        <div class="w-[60px] h-[60px]">
+                            <img src="./Materiales/icono-mano.png" alt="">
+                        </div>
+                        <div>   
+                            <img src="./Materiales/icono-mas.png" alt="">
+                        </div>
+                    </div>    
+                    <h2 class="text-2xl text-white text-center pb-[20px] px-[20px]">Ser voluntario</h2>
+                </button>
+                <button class="flex flex-col bg-[#FF9C07] w-[250px] h-[200px] my-[20px] rounded-[10px] md:mx-[30px] my-[20px]">
+                    <div class="flex flex-row justify-between w-full h-full pt-[15px] px-[20px]">
+                        <div class="w-[60px] h-[60px]">
+                            <img src="./Materiales/icono-mano-corazon.png" alt="">
+                        </div>
+                        <div>   
+                            <img src="./Materiales/icono-mas.png" alt="">
+                        </div>
+                    </div>    
+                    <h2 class="text-2xl text-white text-center pb-[20px] px-[20px]">Donar</h2>
+                </button>
+                <button class="flex flex-col bg-[#28A745] w-[250px] h-[200px] my-[20px] rounded-[10px] md:mx-[30px] my-[20px]">
+                    <div class="flex flex-row justify-between w-full h-full pt-[15px] px-[20px]">
+                        <div class="w-[60px] h-[60px]">
+                            <img src="./Materiales/icono-reciclar.png" alt="">
+                        </div>
+                        <div>   
+                            <img src="./Materiales/icono-mas.png" alt="">
+                        </div>
+                    </div>    
+                    <h2 class="text-2xl text-white text-center pb-[20px] px-[20px]">Reciclar</h2>
+                </button>
+                <button class="flex flex-col bg-[#17A2B8] w-[250px] h-[200px] my-[20px] rounded-[10px] md:mx-[30px] my-[20px]">
+                    <div class="flex flex-row justify-between w-full h-full pt-[15px] px-[20px]">
+                        <div class="w-[60px] h-[60px]">
+                            <img src="./Materiales/icono-maletin.png" alt="">
+                        </div>
+                        <div>   
+                            <img src="./Materiales/icono-mas.png" alt="">
+                        </div>
+                    </div>    
+                    <h2 class="text-2xl text-white text-left pb-[20px] px-[20px]">Llamados laborales</h2>
+                </button>
+            
+            </div>
+        </div>
+    </section>   
+    <!-- seccion noticias -->
+    <section> 
+        <div id="noticias" class="w-full md:h-screen min-h-[844px] bg-[#5298FF] text-center md:flex md:flex-col md:items-center">
+            <div class="py-[50px]">
+                <h1 class="text-bold text-white text-2xl text-center pt-[30px] md:text-5xl">Noticias</h1>
+                <a class="text-center text-white text-xs underline md:underline md:text-sm" href="">Ver todas</a>
+            </div>
+            
+            
+            <div class="flex flex-col items-center md: md:flex md:flex-row md:items-center md:justify-start md:w-[1240px] md:overflow-x-scroll md:snap-start">
+                <!-- noticia animales -->
+                <div class="flex flex-col items-center md:mx-[5px] snap-start">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/animales.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Animales</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Fundappas abre un nuevo centro</h2>
+                                <p class="text-base text-left">El nuevo centro estara ubicado dentro del predio municipal Parque Rivera. La inauguración del centro contara con la presencia de la intendenta Carolina...</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Noticia Direct Tv -->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/uruguay.jpg')] bg-cover bg-center w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Uruguay</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">DIRECTV y Techo inauguraron un espacio deportivo</h2>
+                                <p class="text-base text-left">Los vecinos del lugar recibieron con alegría la concreción de este proyecto, que busca promover la socialización y la actividad física...</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticia Voluntarios -->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/voluntariado1.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[150px] h-[30px]">voluntariado</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Jornada de voluntarios</h2>
+                                <p class="text-base text-left">Se realizó una jornada de voluntarios de Remar. El encuentro tuvo parte en el departamento de Montevideo y contó...</p>
+                            </div>
+                            <div class="pt-[40px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticia Lanzamiento plan tu techo -->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/Techo.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Uruguay</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Lanzamiento del plan Tu Techo</h2>
+                                <p class="text-base text-left">Techo Uruguay informó su nuevo plan de acción para el segundo semestre del año.</p>
+                            </div>
+                            <div class="pt-[60px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticias animales x2-->
+                <div class="flex flex-col items-center hidden md:block md:mx-[5px] snap-start">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/animales.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Animales</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Fundappas abre un nuevo centro</h2>
+                                <p class="text-base text-left">El nuevo centro estara ubicado dentro del predio municipal Parque Rivera. La inauguración del centro contara con la presencia de la intendenta Carolina...</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Noticia Direct Tv x2-->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/uruguay.jpg')] bg-cover bg-center w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Uruguay</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">DIRECTV y Techo inauguraron un espacio deportivo</h2>
+                                <p class="text-base text-left">Los vecinos del lugar recibieron con alegría la concreción de este proyecto, que busca promover la socialización y la actividad física...</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticia Voluntarios x2-->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/voluntariado1.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[150px] h-[30px]">voluntariado</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Jornada de voluntarios</h2>
+                                <p class="text-base text-left">Se realizó una jornada de voluntarios de Remar. El encuentro tuvo parte en el departamento de Montevideo y contó...</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticia Lanzamiento plan tu techo x2 -->
+                <div class="flex flex-col items-center md:mx-[5px]">
+                    <div class="flex flex-col w-[300px] h-[500px] bg-white rounded-[10px] mb-[30px]">
+
+                        <div class="bg-[url('./Materiales/Techo.jpg')] bg-cover bg- w-full h-[250px] rounded-[10px] flex flex-col-reverse pl-[10px] pb-[10px]">
+                            <p class="bg-[#5227CC] text-white  text-xl rounded-[10px] w-[100px] h-[30px]">Uruguay</p>
+                        </div>
+
+                        <div class="w-[300px] h-[500px]">
+                            <div class="flex flex-row w-full justify-between">
+                                <div class="flex flex-row pl-[15px] pt-[10px]">
+                                    <img src="./Materiales/icono-calendario.png" alt="">
+                                    <h2 class="pl-[10px]">10/08/2021</h2>
+                                </div>
+                                <div class="flex flex-row pt-[10px] pr-[10px]">
+                                    <img src="./Materiales/icono-reloj.png" alt="">
+                                    <h2 class="pl-[10px]">4 min</h2>
+                                </div>
+                            </div>
+
+                            <div class="px-[10px] pt-[50px]">
+                                <h2 class="text-lg font-bold text-black text-left pb-[30px]">Lanzamiento del plan Tu Techo</h2>
+                                <p class="text-base text-left">Techo Uruguay informó su nuevo plan de acción para el segundo semestre del año.</p>
+                            </div>
+                            <div class="pt-[20px] pr-[10px] flex flex-row-reverse items-center ">
+                                <h3 class="text-sm text-right px-[5px]">Ver más</h3>
+                                <img class="w-[15px] h-[15px]" src="./Materiales/icono-flecha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- seccion contacto-->
+    <section>
+        <div id="contacto" class="w-full min-h-[844px] bg-white flex flex-col items-center pt-[20px] md:h-screen md:flex md:flex-row">
+            
+            <h1 class="text-black font-bold text-4xl text-center pb-[30px]  pt-[20px] md:hidden">Contacto</h1>
+            <div class="bg-[url('./Materiales/laptop-escritorio.jpg')] bg-center bg-cover w-[300px] h-[250px] rounded-[10px] md:w-[800px] md:h-[400px] md:ml-[100px]"></div>
+            
+            <div class="w-full flex flex-col items-center pt-[20px] md:flex md:flex-col md:items-center md:justify-center md:pl-[30px] md:w-[650px] md:mr-[80px]">
+                <h1 class="text-black font-bold text-4xl text-left pb-[30px] hidden md:block">Contacto</h1>
+                <div class="md:flex md:flex-row md:w-full justify-items-start">
+                    <div class="md:flex md:flex-col md:justify-items-start">
+                        <h3 class="pl-[20px] pb-[10px] text-lg">Texto dato</h3>
+                        <input class="pl-2 w-[300px] h-[40px] border-solid border-grey-200 border-2 rounded-[10px]  ml-[20px] mb-[20px] md:w-[300px]" type="text" placeholder="Dato a completar">
+                        <h3 class="pl-[20px] pb-[10px] text-lg">Texto dato</h3>
+                        <input class="pl-2 w-[300px] h-[40px] border-solid border-grey-200 border-2 rounded-[10px]  ml-[20px] mb-[20px] md:w-[300px]" type="text" placeholder="Dato a completar">
+                    </div>
+                    <div class="md:flex md:flex-col md:justify-items-start">
+                        <h3 class="pl-[20px] pb-[10px] text-lg" >Mensaje</h3>
+                        <input class="pl-2 w-[300px] h-[135px] border-solid border-grey-200 border-2 rounded-[10px]  ml-[20px] mb-[20px] md:w-[300px]" type="text" placeholder="Escribe tu mensaje aquí">
+                    </div>
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <button class="w-[150px] h-[30px] bg-[#5227CC] rounded-full text-2xl tracking-widest text-white font-bold mb-[30px]">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="flex flex-col"></div>
+            <div class="h-[10px] w-full bg-[#5227CC] "></div>
+            <div class="border-solid-white h-[1px] bg-white"></div>
+            <div class="w-full h-[70px] bg-[#7749F8] flex flex-row  md:h-[160px]  ">
+                <div  class="pt-[10px] md:flex  md:justify-center pl-[20px] md:pt-[35px] md:pl-[250px]">
+                    <img class="h-[40px] min-h-[15px] min-w-[60px] md:h-[50px] md:w-[300px]   " src="./Materiales/logo-blanco.png" alt="">
+                </div>
+                <div class="md:flex md:flex-row md:justify-between md:items-center md:w-full md:px-[50px]">
+                    <div class="hidden md:block flex flex-col pl-[100px] text-white font-semibold">
+                        <p>Nosotros</p>
+                        <p>Noticias</p>
+                        <p>Contacto</p>
+                        <p>Terminos y condiciones</p>
+                    </div>
+                    <div class="flex pl-[40px] pt-[20px] md:block md:flex md:flex-col md:pb-[70px] md:pr-[150px]">
+                        <p class="text-white hidden md:block text-[20px]">Seguinos!</p>
+                        <div class="flex flex-row justify-arround">
+                            <i class="fa-brands fa-facebook-f text-white pr-[20px]"></i>
+                            <i class="fa-brands fa-twitter text-white pr-[20px]"></i>
+                            <i class="fa-brands fa-instagram text-white pr-[20px]"></i>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="border-solid-white bg-white h-[1px]"></div>
+            <div class="bg-[#7749F8] h-[30px] flex justify-center">
+                <p>Copyright © 2021 All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
